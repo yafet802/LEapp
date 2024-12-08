@@ -7,6 +7,7 @@ import 'package:flutter_application/Componentes/Botones/Boton_Accion.dart';
 import 'package:flutter_application/Componentes/Botones/Boton_Siguiente.dart';
 import 'package:flutter_application/Componentes/Captura_Datos/Captura_Datos.dart';
 import 'package:flutter_application/Componentes/Ejercicios/Boton_Ilustracion.dart';
+import 'package:flutter_application/Componentes/Ejercicios/Letra_A/EjercicioTipo1/Ejercicio_Tipo_Uno.dart';
 import 'package:flutter_application/Componentes/TabBar/Apartados/Apartado_Actividad.dart';
 import 'package:flutter_application/Componentes/TabBar/Apartados/Apartado_Alumno.dart';
 import 'package:flutter_application/Componentes/TabBar/Apartados/Apartado_Info_Alumno.dart';
@@ -41,9 +42,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromRGBO(247, 249, 252, 1),
+        backgroundColor: const Color.fromRGBO(247, 249, 252, 1),
         body: Center(
-          child: Prueba3(word: 'arbol')
+          child: BotonIlustracion2(onTap: () {})
         ),
       ),
     );
