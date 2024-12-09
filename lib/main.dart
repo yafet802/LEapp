@@ -29,6 +29,8 @@ import 'package:flutter_application/Pantallas/Registro/Tutor/Registro_Nombre_Tut
 import 'package:flutter_application/pruebas.dart';
 import 'package:flutter_application/pruebas2.dart';
 import 'package:flutter_application/pruebas3.dart';
+import 'package:flutter_application/pruebas4.dart';
+import 'package:flutter_application/pruebas5.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +45,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Color.fromRGBO(247, 249, 252, 1),
         body: Center(
-          child: Prueba3(word: 'arbol')
+          child: Ejer2(),
         ),
       ),
     );

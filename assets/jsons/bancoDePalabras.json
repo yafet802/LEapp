@@ -1,0 +1,23 @@
+{
+    "0":     {
+        "palabra": "arbol",
+        "imagen": "assets/img/palabrasImg/arbol.png",
+        "audio": "assets/audios/arbol.mp3"
+    }, 
+    "1":     {
+        "palabra": "anillo",
+        "imagen": "assets/img/palabrasImg/anillo.png",
+        "audio": "assets/audios/anillo.mp3"
+    },   
+    "2":     {
+        "palabra": "aro",
+        "imagen": "assets/img/palabrasImg/aro.png",
+        "audio": "assets/audios/aro.mp3"
+    }, 
+    "3":     {
+        "palabra": "avion",
+        "imagen": "assets/img/palabrasImg/avion.png",
+        "audio": "assets/audios/avion.mp3"
+    }
+}
+         
