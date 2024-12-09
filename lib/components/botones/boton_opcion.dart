@@ -5,9 +5,9 @@ class BotonOpcion extends StatelessWidget {
   final int index;
   final Function(int, String) onTap;
   final String letra;
-  bool habilitado;
+  final bool habilitado;
 
-  BotonOpcion({
+  const BotonOpcion({
     required this.index,
     required this.onTap,
     required this.letra,

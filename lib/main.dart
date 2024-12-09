@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leapp/components/botones/boton_opcion.dart';
 import 'package:leapp/screens/inicio/Inicio_Alumno.dart';
 
 void main() {
@@ -10,9 +11,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: InicioAlumno()
+        body: BotonOpcion(index: 0, letra: "a", onTap: (p0, p1) {}, habilitado: false,)
       ),
     );
   }

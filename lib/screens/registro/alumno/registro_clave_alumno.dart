@@ -3,7 +3,7 @@ import 'package:leapp/components/botones/boton_accion.dart';
 import 'package:leapp/components/botones/boton_iniciar_registrar_secundario.dart';
 import 'package:leapp/components/botones/boton_siguiente.dart';
 import 'package:leapp/components/captura/captura_datos.dart';
-import 'package:leapp/screens/auth/Inicio_Alumno.dart';
+import 'package:leapp/screens/inicio/inicio_alumno.dart';
 
 class RegistroClaveAlumno extends StatefulWidget {
   const RegistroClaveAlumno({super.key});
