@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:leapp/database/db.dart';
-import 'package:leapp/database/palabras.dart';
+import 'package:leapp/database/palabra.dart';
 
-class TestBD extends StatefulWidget {
-  const TestBD({super.key});
+class CRUDa extends StatefulWidget {
+  const CRUDa({super.key});
 
   @override
-  State<TestBD> createState() => _TestBDState();
+  State<CRUDa> createState() => _CRUDaState();
 }
 
-class _TestBDState extends State<TestBD> {
+class _CRUDaState extends State<CRUDa> {
   final Palabra _palabra = Palabra(palabra: "", imagen: "", audio: "");
+  final TextEditingController _palabraController = TextEditingController();
 
-  _addPalabras(Palabra palabra) async {
-    if (palabra.palabra == "" || palabra.imagen == "" || palabra.audio == "") return;
-    await DB.instance.insert(palabra);
+  _addPalabras(TextEditingController value) async {
+    if (value.text == "") return;
+    _palabra.palabra = value.text;
+    _palabra.imagen = 'assets/img/${value.text}';
+    _palabra.audio = 'audio/${value.text}';
+    _palabraController.clear();
+    await DB.instance.insertPalabra("palabras_a", _palabra);
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text("Palabra agregada"), duration: Duration(seconds: 1))
     );
@@ -24,7 +29,7 @@ class _TestBDState extends State<TestBD> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: 500,
+        width: 550,
         margin: const EdgeInsets.only(top: 50),
         child: Column(
           children: [
@@ -44,28 +49,18 @@ class _TestBDState extends State<TestBD> {
       children: [
         const Text("Palabras A", style: TextStyle(fontSize: 30)),
         const SizedBox(height: 10),
-        const Text("Palabra"),
         TextField(
-          onChanged: (value) {
-          _palabra.palabra = value;
-        },),
-        const SizedBox(height: 10),
-        const Text("Imagen"),
-        TextField(
-          onChanged: (value) {
-          _palabra.imagen = value;
-        },),
-        const SizedBox(height: 10),
-        const Text("Audio"),
-        TextField(
-          onChanged: (value) {
-          _palabra.audio = value;
-        },),
-        const SizedBox(height: 10),
-        MaterialButton(
-          child: const Text("Agregar"),
+          controller: _palabraController,
+          style: const TextStyle(fontSize: 25),
+          decoration: const InputDecoration(
+            label: Text("Palabra", style: TextStyle(fontSize: 25))
+          ),
+        ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          child: const Text("Agregar", style: TextStyle(fontSize: 25),),
           onPressed: (){
-            _addPalabras(_palabra);
+            _addPalabras(_palabraController);
           }
         )
       ],
@@ -74,7 +69,7 @@ class _TestBDState extends State<TestBD> {
 
   Widget _listaPalabras() {
     return FutureBuilder(
-      future: DB.instance.getAllPalabras(),
+      future: DB.instance.getAllPalabras("palabras_a"),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           var listaPalabras = snapshot.data!;
@@ -112,11 +107,11 @@ class _TestBDState extends State<TestBD> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(palabra.palabra),
-        Text(palabra.imagen),
-        Text(palabra.audio),
+        Text(palabra.palabra, style: const TextStyle(fontSize: 20)),
+        Text(palabra.imagen, style: const TextStyle(fontSize: 20)),
+        Text(palabra.audio, style: const TextStyle(fontSize: 20)),
         ElevatedButton(onPressed: () async {
-          await DB.instance.delete(palabra.id!);
+          await DB.instance.deletePalabra("palabras_a", palabra.id!);
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text("Palabra eliminada"), duration: Duration(seconds: 1))
           );

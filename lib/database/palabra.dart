@@ -10,4 +10,3 @@ class Palabra {
     return {'id': id, 'palabra': palabra, 'imagen': imagen, 'audio': audio};
   }
 }
-

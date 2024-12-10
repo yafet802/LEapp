@@ -1,4 +1,4 @@
-import 'package:leapp/database/palabras.dart';
+import 'package:leapp/database/palabra.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
@@ -8,7 +8,8 @@ class DB {
   static Database? _database;
   DB._init();
 
-  final String tablePalabra = 'palabras_A';
+  //Nombre de las tablas de palabras
+  final List<String> tablasPalabra = ['palabras_a', 'palabras_e', 'palabras_i', 'palabras_o', 'palabras_u'];
 
   //Metodo para buscar la base de datos
   Future<Database> get database async {
@@ -32,29 +33,31 @@ class DB {
 
   //Al crear la base de datos se crea una tabla
   Future _onCreateDB(Database db, int version) async {
-    await db.execute('''
-    CREATE TABLE $tablePalabra(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    palabra TEXT,
-    imagen TEXT,
-    audio TEXT
-    )
-    ''');
+    for (String tabla in tablasPalabra) {
+      await db.execute('''
+      CREATE TABLE $tabla(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      palabra TEXT,
+      imagen TEXT,
+      audio TEXT
+      )
+      ''');
+    }
   }
 
-  //Metodo para insertar registro en una tabla
-  Future<void> insert(Palabra palabra) async {
+  //Metodo para insertar registro en una tabla de palabras
+  Future<void> insertPalabra(String tabla, Palabra palabra) async {
     //Referencia a la base de datos
     final db = await instance.database;
 
-    await db.insert(tablePalabra, palabra.toMap());
+    await db.insert(tabla, palabra.toMap());
   }
 
   //Metodo para obtener todos los registros de una tabla
-  Future<List<Palabra>> getAllPalabras() async {
+  Future<List<Palabra>> getAllPalabras(String tabla) async {
     final db = await instance.database;
 
-    final List<Map<String, dynamic>> maps = await db.query(tablePalabra);
+    final List<Map<String, dynamic>> maps = await db.query(tabla);
 
     return List.generate(maps.length, (index) {
       return Palabra(
@@ -67,8 +70,8 @@ class DB {
   }
 
   //Metodo para eliminar un registro por id de una tabla
-  Future<int> delete(int id) async {
+  Future<int> deletePalabra(String tabla, int id) async {
     final db = await instance.database;
-    return await db.delete(tablePalabra, where: "id = ?", whereArgs: [id]);
+    return await db.delete(tabla, where: "id = ?", whereArgs: [id]);
   }
 }

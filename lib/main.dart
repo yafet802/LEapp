@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leapp/screens/test/testBD.dart';
+import 'package:leapp/screens/test/crud_a.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,9 +10,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
-        body: TestBD()
+        body: CRUDa()
       ),
     );
   }
