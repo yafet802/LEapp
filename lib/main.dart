@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leapp/screens/test/ejerciciosA.dart';
 import 'package:leapp/screens/test/testBD.dart';
 
 void main() {
@@ -11,8 +12,10 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: TestBD()
+      home: SafeArea(
+        child: Scaffold(
+          body: Ejerciciosa()
+        ),
       ),
     );
   }

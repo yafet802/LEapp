@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 class BotonIlustracion extends StatefulWidget {
 
   final GestureTapCallback onTap;
+  String? imagen;
+  String? letra;
 
-  const BotonIlustracion({
-    required this.onTap
+  BotonIlustracion({
+    required this.onTap,
+    this.imagen,
+    this.letra
   });
 
   @override
@@ -71,21 +75,9 @@ class _BotonIlustracionState extends State<BotonIlustracion> with SingleTickerPr
                     ]
                 ),
                 child: Center(
-                  child: Text(
-                    'a',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Poppins-SemiBold',
-                      fontSize: 400.0,
-                      shadows: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.26),
-                          offset: const Offset(0, 4),
-                          blurRadius: 10.0
-                        )
-                      ]
-                    ),
-                  )
+                  child: widget.letra == null ? 
+                  Image(image: AssetImage('${widget.imagen}'), width: 440.0, height: 440.0) 
+                  : Text('${widget.letra}', style: TextStyle(fontSize: 400.0))
                 )
               ),
               Positioned(
