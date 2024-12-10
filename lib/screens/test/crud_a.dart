@@ -16,8 +16,8 @@ class _CRUDaState extends State<CRUDa> {
   _addPalabras(TextEditingController value) async {
     if (value.text == "") return;
     _palabra.palabra = value.text;
-    _palabra.imagen = 'assets/img/${value.text}';
-    _palabra.audio = 'audio/${value.text}';
+    _palabra.imagen = 'assets/img/${value.text}.png';
+    _palabra.audio = 'audio/${value.text}.mp3';
     _palabraController.clear();
     await DB.instance.insertPalabra("palabras_a", _palabra);
     ScaffoldMessenger.of(context).showSnackBar(
@@ -40,7 +40,6 @@ class _CRUDaState extends State<CRUDa> {
         ),
       ),
     );
-
   }
 
   Widget _formPalabra() {
