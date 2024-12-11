@@ -286,7 +286,7 @@ class _ApartadoActividadState extends State<ApartadoActividad> with SingleTicker
                                                 alignment: Alignment.center,
                                                 children: [
                                                   Positioned(left: 26.0.w,
-                                                    child: Text('Ultima', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 20.0.sp))
+                                                    child: Text('Ejercicios', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 20.0.sp))
                                                   ),
                                                   Positioned(right: 29.0.w,
                                                     child: Text('000', style: TextStyle(color: widget.colorLetra, fontFamily: 'Poppins-SemiBold', fontSize: 20.0.sp))
@@ -314,7 +314,7 @@ class _ApartadoActividadState extends State<ApartadoActividad> with SingleTicker
                                                   alignment: Alignment.center,
                                                   children: [
                                                     Positioned(left: 26.0.w,
-                                                      child: Text('Mejor', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 20.0.sp))
+                                                      child: Text('Examen', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 20.0.sp))
                                                     ),
                                                     Positioned(right: 29.0.w,
                                                       child: Text('000', style: TextStyle(color: widget.colorLetra, fontFamily: 'Poppins-SemiBold', fontSize: 20.0.sp))

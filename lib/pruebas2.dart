@@ -1,52 +1,53 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_application/Componentes/Ejercicios/Letra_A/EjercicioTipo1/Boton_Opcion.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Pruebas2 extends StatefulWidget {
-  const Pruebas2({super.key});
+class ApartadoPalabra2 extends StatefulWidget {
+  final String palabra;
+
+  const ApartadoPalabra2({super.key, required this.palabra});
 
   @override
-  State<Pruebas2> createState() => _Pruebas2State();
+  State<ApartadoPalabra2> createState() => _ApartadoPalabra2State();
 }
 
-class _Pruebas2State extends State<Pruebas2> with SingleTickerProviderStateMixin{
-
-  late final AnimationController controlador;
-  late final Animation<Color?> colorAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    controlador = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 100),
-      lowerBound: 0.0,
-      upperBound: 0.1,
-    );
-
-    colorAnimation = ColorTween(
-      begin: Colors.blue,
-      end: Colors.white,
-    ).animate(controlador);
-
-    controlador.addListener(() {
-      setState(() {});
-    });
-  }
-
-  @override
-  void dispose() {
-    controlador.dispose();
-    super.dispose();
-  }
-
+class _ApartadoPalabra2State extends State<ApartadoPalabra2> {
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.symmetric(horizontal: 38.0, vertical: 18.0),
-      child: GestureDetector(
-        onTap: () {
-          
-        },
-        
+    return Padding(
+      padding: EdgeInsets.only(left: 50.0, right: 50.0, top: 63),
+      child: Container(
+        constraints: BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width - 40.0,
+        ),
+        height: 120.0,
+        decoration: BoxDecoration(
+          color: const Color.fromRGBO(218, 224, 240, 1),
+          borderRadius: BorderRadius.circular(30.0.r),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return FittedBox(
+                fit: BoxFit.fill,
+                child: SizedBox(
+                  height: 120.0,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      BotonOpcion(onTap: (){}, letra: 'a'),
+                      SizedBox(width: 100.0),
+                      BotonOpcion(onTap: (){}, letra: 'a'),
+                      SizedBox(width: 100.0),
+                      BotonOpcion(onTap: (){}, letra: 'a'),
+                    ],
+                  )
+                ),
+              );
+            },
+          ),
+        ),
       ),
     );
   }

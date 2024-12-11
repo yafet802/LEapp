@@ -17,11 +17,10 @@ class BotonOpcion extends StatefulWidget {
 
 class _BotonOpcionState extends State<BotonOpcion> with SingleTickerProviderStateMixin{
 
-  double botonEscala = 1;
+  double botonEscala = 1; 
+  bool habilitado= false;
 
   late final AnimationController controlador;
-
-  bool habilitado= false;
 
   @override
   void initState() {
@@ -31,9 +30,10 @@ class _BotonOpcionState extends State<BotonOpcion> with SingleTickerProviderStat
       duration: const Duration(milliseconds: 100),
       lowerBound: 0.0,
       upperBound: 0.1,
-    )..addListener(() {
-      setState(() {
-      });
+    );
+
+    controlador.addListener(() {
+      setState(() {});
     });
   }
 
@@ -67,7 +67,8 @@ class _BotonOpcionState extends State<BotonOpcion> with SingleTickerProviderStat
         child: SizedBox(
           width: 160.0.w,
           height: 160.0.w,
-          child: Container(
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 100),
             width: 160.0.w,
             height: 160.0.w,
             decoration: BoxDecoration(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Componentes/Ejercicios/Letra_A/EjercicioTipo1/Boton_Opcion.dart';
+import 'package:flutter_application/Lecciones/Apartado_Palabra.dart';
 import 'package:flutter_application/Pantallas/Curso/Boton_Curso.dart';
 import 'package:flutter_application/Componentes/Botones/Boton_Mostrar_Contrasena.dart';
 import 'package:flutter_application/Componentes/Botones/Boton_Opcion_Inicio.dart';
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             backgroundColor: const Color.fromRGBO(247, 249, 252, 1),
-            body: Center(child: BotonOpcion(onTap: () {}, letra: 'a'))
+            body: MyButtonScreen()
           ),
         );
       },
