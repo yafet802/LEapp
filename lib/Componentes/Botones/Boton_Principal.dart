@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
 
 class BotonPrincipal extends StatelessWidget {
   
@@ -14,10 +15,10 @@ class BotonPrincipal extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Container(width: 350.0, height: 80.0,
+      child: Container(width: 350.0.w, height: 80.0.h,
         decoration: BoxDecoration(
           color: const Color.fromRGBO(125, 162, 255, 1),
-          borderRadius: BorderRadius.circular(50.0), 
+          borderRadius: BorderRadius.circular(50.0.r), 
           boxShadow: const [
             BoxShadow(
               color: Color.fromRGBO(125, 162, 255, 0.4), 
@@ -30,9 +31,9 @@ class BotonPrincipal extends StatelessWidget {
         child: Center(
           child: Text(
             nombreBoton, 
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'Poppins-SemiBold', 
-              fontSize: 32.0, 
+              fontSize: 32.0.sp, 
               color: Colors.white
             )
           )

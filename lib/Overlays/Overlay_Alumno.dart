@@ -3,6 +3,7 @@ import 'package:flutter_application/Componentes/Botones/Boton_Cerrar.dart';
 import 'package:flutter_application/Componentes/Botones/Boton_Principal.dart';
 import 'package:flutter_application/Letras/Letras.dart';
 import 'package:flutter_application/Pantallas/Perfiles/Perfil_Alumno.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OverlayAlumno extends StatefulWidget {
   const OverlayAlumno({super.key});
@@ -64,33 +65,33 @@ class _OverlayAlumnoState extends State<OverlayAlumno> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 540.0,
-      height: 562.0,
+      width: 540.0.w,
+      height: 562.0.h,
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Positioned(bottom: 2.0,
+          Positioned(bottom: 2.0.h,
             child: Container(
-              width: 540.0,
-              height: 140.0,
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(247, 249, 252, 1),
+              width: 540.0.w,
+              height: 140.0.h,
+              decoration: BoxDecoration(
+                color: const Color.fromRGBO(247, 249, 252, 1),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(25.0),
-                  bottomRight: Radius.circular(25.0)
+                  bottomLeft: Radius.circular(25.0.r),
+                  bottomRight: Radius.circular(25.0.r)
                 ),
               ),
             ),
           ),
-          Positioned(top: 71.0,
+          Positioned(top: 71.0.h,
             child: Container(
-              width: 540.0,
-              height: 350.0,
+              width: 540.0.w,
+              height: 350.0.h,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(25.0),
-                  topRight: Radius.circular(25.0)
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25.0.r),
+                  topRight: Radius.circular(25.0.r)
                 ),
                 boxShadow: [
                   BoxShadow(
@@ -103,48 +104,48 @@ class _OverlayAlumnoState extends State<OverlayAlumno> {
             ),
           ),
           Container(
-            width: 142.0,
-            height: 72.0,
-            decoration: const BoxDecoration(
+            width: 142.0.w,
+            height: 72.0.h,
+            decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(100.0),
-                topRight: Radius.circular(100.0)
+                topLeft: Radius.circular(100.0.r),
+                topRight: Radius.circular(100.0.r)
               ),
             ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Padding(padding: EdgeInsets.only(top: 9.0, bottom: 31.0),
-                child: Image(image: AssetImage('assets/img/FotoPerfilAlumno.png'), width: 123.0, height: 123.0),
+              Padding(padding: EdgeInsets.only(top: 9.0.h, bottom: 31.0.h),
+                child: Image(image: const AssetImage('assets/img/FotoPerfilAlumno.png'), width: 123.0.w, height: 123.0.w),
               ),
-              const Text('Nombre Alumno', style: TextStyle(color: Colors.black, fontFamily: 'Poppins-SemiBold', fontSize: 32.0)),
-              const Padding(padding: EdgeInsets.only(top: 22.0, bottom: 35.0),
-                child: Text('Fase del curso en la\nque se encuentra:', textAlign: TextAlign.center, style: TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 24.0)),
+              Text('Nombre Alumno', style: TextStyle(color: Colors.black, fontFamily: 'Poppins-SemiBold', fontSize: 32.0.sp)),
+              Padding(padding: EdgeInsets.only(top: 22.0.h, bottom: 35.0.h),
+                child: Text('Fase del curso en la\nque se encuentra:', textAlign: TextAlign.center, style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 24.0.sp)),
               ),
               Container(
-                width: 400.0,
-                height: 60.0,
+                width: 400.0.w,
+                height: 60.0.h,
                 decoration: BoxDecoration(
                   color: const Color.fromRGBO(218, 224, 240, 1),
-                  borderRadius: BorderRadius.circular(50.0),
+                  borderRadius: BorderRadius.circular(50.0.r),
                 ),
                 child: Stack(
                   alignment: Alignment.centerLeft,
                   children: [
-                    Padding(padding: const EdgeInsets.only(left: 35.0), child: Text('${_getTipoLetra(listaActual[indiceActual])}', style: const TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 24.0))),
+                    Padding(padding: EdgeInsets.only(left: 35.0.w), child: Text('${_getTipoLetra(listaActual[indiceActual])}', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 24.0.sp))),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Padding(padding: const EdgeInsets.only(right: 5.0, left: 64.0),
+                        Padding(padding: EdgeInsets.only(right: 5.0.w, left: 64.0.w),
                           child: Container(
-                            width: 130.0,
-                            height: 50.0,
+                            width: 130.0.w,
+                            height: 50.0.h,
                             decoration: BoxDecoration(
                               color: listaActual[indiceActual].colorHabilitado,
-                              borderRadius: BorderRadius.circular(50.0),
+                              borderRadius: BorderRadius.circular(50.0.r),
                               boxShadow: [
                                 BoxShadow(
                                   color: listaActual[indiceActual].colorHabilitado.withOpacity(0.2),
@@ -154,7 +155,7 @@ class _OverlayAlumnoState extends State<OverlayAlumno> {
                                 )
                               ]
                             ),
-                            child: Center(child: Text('${listaActual[indiceActual].letra}', style: const TextStyle(color: Colors.white, fontFamily: 'Poppins-SemiBold', fontSize: 38.0))),
+                            child: Center(child: Text('${listaActual[indiceActual].letra}', style: TextStyle(color: Colors.white, fontFamily: 'Poppins-SemiBold', fontSize: 38.0.sp))),
                           ),
                         )
                       ],
@@ -162,12 +163,12 @@ class _OverlayAlumnoState extends State<OverlayAlumno> {
                   ],
                 )
               ),
-              Padding(padding: const EdgeInsets.only(top: 56.0),
+              Padding(padding: EdgeInsets.only(top: 76.0.h),
                 child: BotonPrincipal(nombreBoton: 'Inspeccionar', onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => const PerfilAlumno()));})
               )
             ],
           ),
-          Positioned(top: 83.0, right:  10.0, child: BotonCerrar(onTap: () {Navigator.pop(context);}))
+          Positioned(top: 83.0.h, right:  10.0.w, child: BotonCerrar(onTap: () {Navigator.pop(context);}))
         ],
       ),
     );

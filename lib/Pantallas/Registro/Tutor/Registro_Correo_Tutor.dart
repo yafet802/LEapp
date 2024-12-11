@@ -1,11 +1,11 @@
 import "package:flutter/material.dart";
 import 'package:flutter_application/Componentes/Botones/Boton_Accion.dart';
 import 'package:flutter_application/Componentes/Botones/Boton_Iniciar_Registrar_Secundario.dart';
-import 'package:flutter_application/Componentes/Botones/Boton_Mostrar_Contrasena.dart';
 import 'package:flutter_application/Componentes/Botones/Boton_Opcion_Inicio.dart';
 import 'package:flutter_application/Componentes/Botones/Boton_Siguiente.dart';
 import 'package:flutter_application/Componentes/Captura_Datos/Captura_Datos.dart';
 import 'package:flutter_application/Pantallas/Registro/Tutor/Registro_Contrasena_Tutor.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegistroCorreoTutor extends StatefulWidget {
   const RegistroCorreoTutor({super.key});
@@ -27,30 +27,30 @@ class _RegistroCorreoTutorState extends State<RegistroCorreoTutor> {
             fit: StackFit.expand,
             children: [
               SingleChildScrollView(
-                child: Padding(padding: EdgeInsets.only(top: 70.0),
+                child: Padding(padding: EdgeInsets.only(top: 70.0.h),
                   child: SizedBox(
                     child: Column(
                       children: [
-                        const Text('Registra un correo', style: TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 36.0)),
-                        Padding(padding: const EdgeInsets.only(top: 94.0),
+                        Text('Registra un correo', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 36.0.sp)),
+                        Padding(padding: EdgeInsets.only(top: 94.0.h),
                           child: SizedBox(
-                            width: 576.0,
+                            width: 576.0.w,
                             child: Column(
                               children: [
                                 CapturaDato(nombreControlador: correoTutor, nombreCampo: 'Correo', obscureText: false),
-                                Padding(padding: EdgeInsets.only(top: 81.0),
+                                Padding(padding: EdgeInsets.only(top: 81.0.h),
                                   child: SizedBox(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.center,
                                       children: [
-                                        const Text('O regístrate con', style: TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 24.0)),
-                                        const SizedBox(height: 31.0),
+                                        Text('O regístrate con', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 24.0.sp)),
+                                        SizedBox(height: 31.0.h),
                                         Container(
-                                          width: 320,
-                                          height: 100,
+                                          width: 320.w,
+                                          height: 100.h,
                                           decoration: BoxDecoration(
                                             color: const Color.fromRGBO(218, 224, 240, 1),
-                                            borderRadius: BorderRadius.circular(15.0),
+                                            borderRadius: BorderRadius.circular(15.0.r),
                                             boxShadow: [
                                               BoxShadow(
                                                 color: Colors.black.withOpacity(0.1),
@@ -64,7 +64,7 @@ class _RegistroCorreoTutorState extends State<RegistroCorreoTutor> {
                                             crossAxisAlignment: CrossAxisAlignment.center,
                                             children: [
                                               BotonOpcionInicio(colorBoton: Colors.white, colorSombra: const Color.fromRGBO(191, 197, 211, 0.25), logoBoton: const Image(image: AssetImage('assets/img/logoGoogle.png'))),
-                                              Padding(padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                                              Padding(padding: EdgeInsets.symmetric(horizontal: 30.0.w),
                                                 child: BotonOpcionInicio(colorBoton: const Color.fromRGBO(27, 116, 244, 1), colorSombra: const Color.fromRGBO(21, 94, 199, 0.25), logoBoton: const Image(image: AssetImage('assets/img/logoFacebook.png'))),
                                               ),
                                               BotonOpcionInicio(colorBoton: const Color.fromRGBO(0, 215, 87, 1), colorSombra: const Color.fromRGBO(0, 167, 68, 0.25), logoBoton: const Image(image: AssetImage('assets/img/logoWhatsapp.png'))),
@@ -79,11 +79,11 @@ class _RegistroCorreoTutorState extends State<RegistroCorreoTutor> {
                             ),
                           )
                         ),
-                        Padding(padding: const EdgeInsets.only(top: 266.0),
+                        Padding(padding: EdgeInsets.only(top: 266.0.h),
                           child: SizedBox(
                             child: Column(
                               children: [
-                                Padding(padding: const EdgeInsets.only(bottom: 55.0),
+                                Padding(padding: EdgeInsets.only(bottom: 55.0.h),
                                   child: BotonSiguiente(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => const RegistroContrasenaTutor()));}),
                                 ),
                                 BotonInicioRegistroSecundario(onPressed: () {}, descripcion: '¿Ya tienes una cuenta?', accionSecundaria: 'Inicia aquí')
@@ -97,8 +97,8 @@ class _RegistroCorreoTutorState extends State<RegistroCorreoTutor> {
                 ),
               ),
               Positioned(
-                top: 42.0,
-                left: 27.0,
+                top: 42.0.h,
+                left: 27.0.w,
                 child: Boton_Accion(iconoBoton: Icons.arrow_back_rounded, iconoColor: const Color.fromRGBO(126, 132, 148, 1), colorBoton: Colors.white, onTap: (){Navigator.pop(context);})
               )
             ]

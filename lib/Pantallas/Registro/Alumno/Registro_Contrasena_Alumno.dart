@@ -5,6 +5,7 @@ import 'package:flutter_application/Componentes/Botones/Boton_Mostrar_Contrasena
 import 'package:flutter_application/Componentes/Botones/Boton_Siguiente.dart';
 import 'package:flutter_application/Componentes/Captura_Datos/Captura_Datos.dart';
 import 'package:flutter_application/Pantallas/Registro/Alumno/Registro_Clave_Alumno.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegistroContrasenaAlumno extends StatefulWidget {
   const RegistroContrasenaAlumno({super.key});
@@ -29,18 +30,18 @@ class _RegistroContrasenaAlumnoState extends State<RegistroContrasenaAlumno> {
             fit: StackFit.expand,
             children: [
               SingleChildScrollView(
-                child: Padding(padding: EdgeInsets.only(top: 70.0),
+                child: Padding(padding: EdgeInsets.only(top: 70.0.h),
                   child: SizedBox(
                     child: Column(
                       children: [
-                        const Text('Crea una contraseña', style: TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 36.0)),
-                        Padding(padding: const EdgeInsets.only(top: 94.0),
+                        Text('Crea una contraseña', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 36.0.sp)),
+                        Padding(padding: EdgeInsets.only(top: 94.0.h),
                           child: SizedBox(
-                            width: 576.0,
+                            width: 576.0.w,
                             child: Column(
                               children: [
                                 CapturaDato(nombreControlador: contrasenaAlumno, nombreCampo: 'Contraseña', obscureText: isSelected),
-                                Padding(padding: const EdgeInsets.only(top: 42.0, bottom: 25.0),
+                                Padding(padding: EdgeInsets.only(top: 42.0.h, bottom: 25.0.h),
                                   child: CapturaDato(nombreControlador: confirmarContrasenaAlumno, nombreCampo: 'Confirmar Contraseña', obscureText: isSelected),
                                 ),
                                 Row(
@@ -60,11 +61,11 @@ class _RegistroContrasenaAlumnoState extends State<RegistroContrasenaAlumno> {
                             ),
                           )
                         ),
-                        Padding(padding: const EdgeInsets.only(top: 189.0),
+                        Padding(padding: EdgeInsets.only(top: 189.0.h),
                           child: SizedBox(
                             child: Column(
                               children: [
-                                Padding(padding: const EdgeInsets.only(bottom: 55.0),
+                                Padding(padding: EdgeInsets.only(bottom: 55.0.h),
                                   child: BotonSiguiente(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => const RegistroClaveAlumno()));}),
                                 ),
                                 BotonInicioRegistroSecundario(onPressed: () {}, descripcion: '¿Ya tienes una cuenta?', accionSecundaria: 'Inicia aquí')
@@ -78,8 +79,8 @@ class _RegistroContrasenaAlumnoState extends State<RegistroContrasenaAlumno> {
                 ),
               ),
               Positioned(
-                top: 42.0,
-                left: 27.0,
+                top: 42.0.h,
+                left: 27.0.w,
                 child: Boton_Accion(iconoBoton: Icons.arrow_back_rounded, iconoColor: const Color.fromRGBO(126, 132, 148, 1), colorBoton: Colors.white, onTap: (){})
               )
             ]

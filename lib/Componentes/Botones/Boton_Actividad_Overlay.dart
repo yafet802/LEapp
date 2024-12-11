@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/Letras/Letras.dart';
-import 'package:flutter_application/Overlays/Overlay_Actividad.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BotonOverlatActividad extends StatelessWidget {
 
@@ -16,10 +15,10 @@ class BotonOverlatActividad extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Container(width: 350.0, height: 80.0,
+      child: Container(width: 350.0.w, height: 80.0.h,
         decoration: BoxDecoration(
           color: colorBoton,
-          borderRadius: BorderRadius.circular(50.0), 
+          borderRadius: BorderRadius.circular(50.0.r), 
           boxShadow: [
             BoxShadow(
               color: colorBoton.withOpacity(0.4), 
@@ -29,12 +28,12 @@ class BotonOverlatActividad extends StatelessWidget {
             )
           ]
         ),
-        child: const Center(
+        child: Center(
           child: Text(
             'Comenzar', 
             style: TextStyle(
               fontFamily: 'Poppins-SemiBold', 
-              fontSize: 32.0, 
+              fontSize: 32.0.sp, 
               color: Colors.white
             )
           )
