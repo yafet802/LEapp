@@ -25,19 +25,19 @@ flutter:
     - assets/img/
     - assets/audio/
 
-fonts:
-  - family: Poppins-Light
-    fonts:
-      - asset: assets/fonts/Poppins-Light.ttf 
-  - family: Poppins-Medium
-    fonts:
-      - asset: assets/fonts/Poppins-Medium.ttf
-  - family: Poppins-Regular
-    fonts:
-      - asset: assets/fonts/Poppins-Regular.ttf  
-  - family: Poppins-SemiBold
-    fonts:
-      - asset: assets/fonts/Poppins-Semibold.ttf   
-  - family: Poppins-Bold
-    fonts:
-      - asset: assets/fonts/Poppins-Bold.ttf 
+  fonts:
+    - family: Poppins-Light
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf 
+    - family: Poppins-Medium
+      fonts:
+        - asset: assets/fonts/Poppins-Medium.ttf
+    - family: Poppins-Regular
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf  
+    - family: Poppins-SemiBold
+      fonts:
+        - asset: assets/fonts/Poppins-Semibold.ttf   
+    - family: Poppins-Bold
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf 

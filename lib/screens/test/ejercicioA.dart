@@ -46,7 +46,6 @@ class _MyWidgetState extends State<MyWidget> {
       mezcladas.removeLast();
       //mezcladas.add(aLetra);//PARA QUE LA A SIEMPRE ESTE? //AGREGAMOS LA a// ESTE DEREPENTE NO SACA LAS a
       mezcladas.add('a');
-
       mezcladas
           .shuffle(); //mezclar para poner aleatoria la posicion //se mezcla con la a
     });

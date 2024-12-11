@@ -1,32 +1,31 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:leapp/components/botones/boton_siguiente.dart';
 import 'package:leapp/database/db.dart';
 import 'package:leapp/database/palabras.dart';
-import 'package:leapp/screens/test/ejercicioA.dart';
+import 'package:leapp/screens/test/leccionA.dart';
 
-class Ejerciciosa extends StatefulWidget {
-  const Ejerciciosa({super.key});
+class LeccionesA extends StatefulWidget {
+  const LeccionesA({super.key});
 
   @override
-  State<Ejerciciosa> createState() => _EjerciciosaState();
+  State<LeccionesA> createState() => _LeccionesAState();
 }
 
-class _EjerciciosaState extends State<Ejerciciosa>
-    with SingleTickerProviderStateMixin {//para el animation controller
+class _LeccionesAState extends State<LeccionesA>
+    with SingleTickerProviderStateMixin {
+  //para el animation controller
   late PageController _controller;
   //bool opcionSeleccionada = false;
   late AnimationController _animationController;
-  late Animation<Offset> _offsetAnimation;
-
-  ///////
-  bool opcionSeleccionada = false;
-  bool respuestaCorrecta = false;
-  /////
-  int contadorCorrectas = 0;
+  late Animation<Offset> _offsetAnimation; //ANIMACION DEL BOTON SIGUIENTE
 
   /////
   int contadorPaginas = 1;
 
+  ///
+  bool mostrarBotonSiguiente = false;
 
   @override
   void initState() {
@@ -50,28 +49,21 @@ class _EjerciciosaState extends State<Ejerciciosa>
     if (_controller.hasClients) {
       contadorPaginas++;
       setState(() {
-        if (respuestaCorrecta) {
-          contadorCorrectas++; // Incrementar el contador solo si la respuesta es correcta y el botón siguiente ha sido presionado
-        }
         _controller.nextPage(
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeIn,
         );
-        opcionSeleccionada = false;
-        respuestaCorrecta = false;
         _animationController.reverse();
+        mostrarBotonSiguiente = false;
       });
     } else {
       print('controlador no esta conectado al pageview');
     }
   }
 
-  void _onOpcionSeleccionada(String letraSeleccionada) {
-    bool esCorrecta = letraSeleccionada == 'a';
-    ///////////////////////
+  void _handleTresClicks() {
     setState(() {
-      opcionSeleccionada = true;
-      respuestaCorrecta = esCorrecta;
+      mostrarBotonSiguiente = true;
       _animationController.forward();
     });
   }
@@ -84,13 +76,15 @@ class _EjerciciosaState extends State<Ejerciciosa>
     super.dispose();
   }
 
-  Widget _ejercicioPalabras() {
+  Widget _LeccionesA() {
     return FutureBuilder(
       future: DB.instance.getAllPalabras(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           //si tiene datos
           List<Palabra> palabras = snapshot.data!;
+          palabras.sort((a, b) =>
+              a.palabra.compareTo(b.palabra)); // Ordenar alfabéticamente
           return palabras.isEmpty
               ? const Center(
                   child: Text('No hay palabras')) //si no hay palabras
@@ -113,24 +107,15 @@ class _EjerciciosaState extends State<Ejerciciosa>
                                 const SizedBox(
                                   height: 50,
                                 ),
-                                MyWidget(
+                                LeccionA(
+                                  palabra: palabras[index].palabra,
                                   rutaImagen: palabras[index].imagen,
                                   rutaSonido: palabras[index].audio,
-                                  onOpcionSeleccionada: _onOpcionSeleccionada,
+                                  onTresClicks: _handleTresClicks,
                                 ),
                                 const SizedBox(
-                                  height: 50,
+                                  height: 100,
                                 ),
-                                // if (opcionSeleccionada)
-                                //   Text(
-                                //     respuestaCorrecta
-                                //         ? 'correcto'
-                                //         : 'intenta de nuevo',
-                                //     style: TextStyle(
-                                //         color: respuestaCorrecta
-                                //             ? Colors.green
-                                //             : Colors.yellow),
-                                //   )
                               ],
                             ),
                           );
@@ -138,17 +123,16 @@ class _EjerciciosaState extends State<Ejerciciosa>
                       ),
                     ),
                     Container(
-                      height: 100,
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: opcionSeleccionada
-                          ? SlideTransition(
-                              position: _offsetAnimation,
-                              child: BotonSiguiente(
-                                onPressed: _nextPage,
-                              ),
-                            )
-                          : null,
-                    ),
+                        height: 100,
+                        child: SlideTransition(
+                          position: _offsetAnimation,
+                          child: BotonSiguiente(
+                            onPressed: _nextPage,
+                          ),
+                        )),
+                    SizedBox( 
+                      height: 20,
+                    )
                   ],
                 );
         } else {
@@ -160,14 +144,14 @@ class _EjerciciosaState extends State<Ejerciciosa>
 
   @override
   Widget build(BuildContext context) {
-    return _ejercicioPalabras();
+    return _LeccionesA();
   }
 
   Widget _header({required int cantidad, required int controller}) {
     return Row(
       children: [
         const Icon(Icons.arrow_circle_left, size: 70),
-         Expanded(
+        Expanded(
             child: Padding(
           padding: EdgeInsets.all(30),
           child: LinearProgressIndicator(
