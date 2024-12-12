@@ -12,7 +12,7 @@ class MyWidget extends StatefulWidget {
   final Function(String) onOpcionSeleccionada;
 
   ////
-  MyWidget(
+  const MyWidget(
       {required this.rutaImagen,
       required this.rutaSonido,
       required this.onOpcionSeleccionada,
@@ -71,7 +71,7 @@ class _MyWidgetState extends State<MyWidget> {
           },
           imagen: widget.rutaImagen,
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Divider(
@@ -81,69 +81,67 @@ class _MyWidgetState extends State<MyWidget> {
           indent: 10, // Espacio antes del divider
           endIndent: 10, // Espacio después del divider
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
-        Container(
-          child: Column(children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                BotonOpcion(
-                  habilitado: botonSeleccionado == 0,
-                  index: 0,
-                  letra: mezcladas[0],
-                  onTap: (p0, p1) {
-                    _handleOpcionSeleccionada(0,
-                        mezcladas[0]); //EL ESTADO DEL BOTON-SI FUE SELECCIONADO
-                    print(p1);
-                  },
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                BotonOpcion(
-                  habilitado: botonSeleccionado == 1,
-                  index: 1,
-                  letra: mezcladas[1],
-                  onTap: (p0, p1) {
-                    _handleOpcionSeleccionada(1, mezcladas[1]);
-                    print(p1);
-                  },
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                BotonOpcion(
-                  habilitado: botonSeleccionado == 2,
-                  index: 2,
-                  letra: mezcladas[2],
-                  onTap: (p0, p1) {
-                    _handleOpcionSeleccionada(2, mezcladas[2]);
-                    print(p1);
-                  },
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                BotonOpcion(
-                  habilitado: botonSeleccionado == 3,
-                  index: 3,
-                  letra: mezcladas[3],
-                  onTap: (p0, p1) {
-                    _handleOpcionSeleccionada(3, mezcladas[3]);
-                    print(p1);
-                  },
-                ),
-              ],
-            )
-          ]),
-        )
+        Column(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BotonOpcion(
+                habilitado: botonSeleccionado == 0,
+                index: 0,
+                letra: mezcladas[0],
+                onTap: (p0, p1) {
+                  _handleOpcionSeleccionada(0,
+                      mezcladas[0]); //EL ESTADO DEL BOTON-SI FUE SELECCIONADO
+                  print(p1);
+                },
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              BotonOpcion(
+                habilitado: botonSeleccionado == 1,
+                index: 1,
+                letra: mezcladas[1],
+                onTap: (p0, p1) {
+                  _handleOpcionSeleccionada(1, mezcladas[1]);
+                  print(p1);
+                },
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BotonOpcion(
+                habilitado: botonSeleccionado == 2,
+                index: 2,
+                letra: mezcladas[2],
+                onTap: (p0, p1) {
+                  _handleOpcionSeleccionada(2, mezcladas[2]);
+                  print(p1);
+                },
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              BotonOpcion(
+                habilitado: botonSeleccionado == 3,
+                index: 3,
+                letra: mezcladas[3],
+                onTap: (p0, p1) {
+                  _handleOpcionSeleccionada(3, mezcladas[3]);
+                  print(p1);
+                },
+              ),
+            ],
+          )
+        ])
       ]),
     );
   }

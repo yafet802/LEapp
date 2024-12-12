@@ -134,7 +134,7 @@ class _OverlayAlumnoState extends State<OverlayAlumno> {
                 child: Stack(
                   alignment: Alignment.centerLeft,
                   children: [
-                    Padding(padding: EdgeInsets.only(left: 35.0.w), child: Text('${_getTipoLetra(listaActual[indiceActual])}', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 24.0.sp))),
+                    Padding(padding: EdgeInsets.only(left: 35.0.w), child: Text(_getTipoLetra(listaActual[indiceActual]), style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 24.0.sp))),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -155,7 +155,7 @@ class _OverlayAlumnoState extends State<OverlayAlumno> {
                                 )
                               ]
                             ),
-                            child: Center(child: Text('${listaActual[indiceActual].letra}', style: TextStyle(color: Colors.white, fontFamily: 'Poppins-SemiBold', fontSize: 38.0.sp))),
+                            child: Center(child: Text(listaActual[indiceActual].letra, style: TextStyle(color: Colors.white, fontFamily: 'Poppins-SemiBold', fontSize: 38.0.sp))),
                           ),
                         )
                       ],

@@ -12,6 +12,7 @@ class PlantillaBotonCurso extends StatelessWidget {
   final TipoPlantillaBoton tipo;
 
   const PlantillaBotonCurso({
+    super.key, 
     required this.tipo
   });
 

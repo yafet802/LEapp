@@ -6,6 +6,8 @@ import "package:leapp/screens/registro/alumno/registro_nombre_alumno.dart";
 import "package:leapp/screens/registro/tutor/registro_nombre_tutor.dart";
 
 class SeleccionUsuario extends StatefulWidget {
+  const SeleccionUsuario({super.key});
+
   @override
   State<SeleccionUsuario> createState() => _SeleccionUsuarioState();
 }

@@ -23,7 +23,7 @@ class BotonCerrar extends StatelessWidget {
             )
           ]
         ),
-        child: Center(child: Image(image: AssetImage('assets/img/cerrarIcono.png'), width: 22.0.w, height: 22.0.w))
+        child: Center(child: Image(image: const AssetImage('assets/img/cerrarIcono.png'), width: 22.0.w, height: 22.0.w))
       ),
     );
   }

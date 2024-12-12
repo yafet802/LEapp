@@ -141,7 +141,7 @@ class _ApartadoInfoAlumnoState extends State<ApartadoInfoAlumno> {
                       ),
                       child: Center(
                         child: Text(
-                          '${_getTipoLetra(listaActual[indiceActual])}', 
+                          _getTipoLetra(listaActual[indiceActual]), 
                           style: TextStyle(color: Colors.white, fontFamily: 'Poppins-SemiBold' , fontSize: 23.0.sp)
                         )
                       ),
@@ -175,7 +175,7 @@ class _ApartadoInfoAlumnoState extends State<ApartadoInfoAlumno> {
                           )
                         ]
                       ),
-                      child: Center(child: Text('${listaActual[indiceActual].letra}', style: TextStyle(color: Colors.white, fontFamily: 'Poppins-SemiBold', fontSize: 23.0.sp))),
+                      child: Center(child: Text(listaActual[indiceActual].letra, style: TextStyle(color: Colors.white, fontFamily: 'Poppins-SemiBold', fontSize: 23.0.sp))),
                     )
                   ],
                 ),
