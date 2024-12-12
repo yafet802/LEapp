@@ -60,7 +60,9 @@ class _RegistroClaveAlumnoState extends State<RegistroClaveAlumno> {
               Positioned(
                 top: 42.0,
                 left: 27.0,
-                child: BotonAccion(iconoBoton: Icons.arrow_back_rounded, iconoColor: const Color.fromRGBO(126, 132, 148, 1), colorBoton: Colors.white, onTap: (){})
+                child: BotonAccion(iconoBoton: Icons.arrow_back_rounded, iconoColor: const Color.fromRGBO(126, 132, 148, 1), colorBoton: Colors.white, onTap: (){
+                  Navigator.pop(context);
+                })
               )
             ]
         ),

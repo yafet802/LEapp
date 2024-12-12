@@ -11,8 +11,10 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: CRUDa()
+      home: SafeArea(
+        child: Scaffold(
+          body: CRUDa()
+        ),
       ),
     );
   }

@@ -20,19 +20,22 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-fonts:
-  - family: Poppins-Light
-    fonts:
-      - asset: assets/fonts/Poppins-Light.ttf 
-  - family: Poppins-Medium
-    fonts:
-      - asset: assets/fonts/Poppins-Medium.ttf
-  - family: Poppins-Regular
-    fonts:
-      - asset: assets/fonts/Poppins-Regular.ttf  
-  - family: Poppins-SemiBold
-    fonts:
-      - asset: assets/fonts/Poppins-Semibold.ttf   
-  - family: Poppins-Bold
-    fonts:
-      - asset: assets/fonts/Poppins-Bold.ttf 
+  assets:
+    - assets/img/
+
+  fonts:
+    - family: Poppins-Light
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf 
+    - family: Poppins-Medium
+      fonts:
+        - asset: assets/fonts/Poppins-Medium.ttf
+    - family: Poppins-Regular
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf  
+    - family: Poppins-SemiBold
+      fonts:
+        - asset: assets/fonts/Poppins-Semibold.ttf   
+    - family: Poppins-Bold
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf 
