@@ -1,12 +1,11 @@
 import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
 import "package:leapp/components/botones/boton_iniciar_registrar_secundario.dart";
 import "package:leapp/components/botones/boton_siguiente.dart";
 import "package:leapp/screens/registro/alumno/registro_nombre_alumno.dart";
 import "package:leapp/screens/registro/tutor/registro_nombre_tutor.dart";
 
 class SeleccionUsuario extends StatefulWidget {
-  const SeleccionUsuario({super.key});
-
   @override
   State<SeleccionUsuario> createState() => _SeleccionUsuarioState();
 }
@@ -23,19 +22,19 @@ class _SeleccionUsuarioState extends State<SeleccionUsuario> {
         alignment: Alignment.topCenter,
         fit: StackFit.expand,
         children: [
-          Padding(padding: EdgeInsets.only(top: 70.0),
+          Padding(padding: EdgeInsets.only(top: 70.0.h),
             child: SizedBox(
               child: Column(
                 children: [
-                  const Text('Bienvenido!', style: TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Semibold', fontSize: 36.0)),
-                  const Text('Escoge tu rol', style: TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 28.0)),
-                  Padding(padding: const EdgeInsets.only(top: 189.0),
+                  Text('Bienvenido!', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Semibold', fontSize: 36.0.sp)),
+                  Text('Escoge tu rol', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 28.0.sp)),
+                  Padding(padding: EdgeInsets.only(top: 189.0.h),
                     child: SizedBox(
-                      width: 536.0,
-                      height: 287.0,
+                      width: 536.0.w,
+                      height: 287.0.h,
                       child: Stack(
                         children: [
-                          Padding(padding: const EdgeInsets.all(10.0),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 10.0.w, vertical: 10.0.h),
                             child: Column(
                               children: [
                                 GestureDetector(
@@ -45,12 +44,12 @@ class _SeleccionUsuarioState extends State<SeleccionUsuario> {
                                     });
                                   },
                                   child: Container(
-                                    width: 516.0,
-                                    height: 133.0,
+                                    width: 516.0.w,
+                                    height: 133.0.h,
                                     decoration: BoxDecoration(
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(25.0),
-                                        topRight: Radius.circular(25.0)
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(25.0.r),
+                                        topRight: Radius.circular(25.0.r)
                                       ),
                                       color: Colors.white,
                                       boxShadow: [
@@ -70,12 +69,12 @@ class _SeleccionUsuarioState extends State<SeleccionUsuario> {
                                     });
                                   },
                                   child: Container(
-                                    width: 516.0,
-                                    height: 133.0,
+                                    width: 516.0.w,
+                                    height: 133.0.h,
                                     decoration: BoxDecoration(
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(25.0),
-                                        bottomRight: Radius.circular(25.0)
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(25.0.r),
+                                        bottomRight: Radius.circular(25.0.r)
                                       ),
                                       color: Colors.white,
                                       boxShadow: [
@@ -93,14 +92,14 @@ class _SeleccionUsuarioState extends State<SeleccionUsuario> {
                         ),
                         AnimatedPositioned(
                           curve: Curves.easeInOut,
-                          top: rolSeleccionado ? 0.0 : 130.0,
+                          top: rolSeleccionado ? 0.0.h : 130.0.h,
                           duration: const Duration(milliseconds: 150),
                           child: Container(
-                            width: 536.0,
-                            height: 156.0,
+                            width: 536.0.w,
+                            height: 156.0.h,
                             decoration: BoxDecoration(
                               color: const Color.fromRGBO(125, 162, 255, 1),
-                              borderRadius: BorderRadius.circular(35.0),
+                              borderRadius: BorderRadius.circular(35.0.r),
                               boxShadow: const [
                                 BoxShadow(
                                   color: Color.fromRGBO(125, 162, 255, 0.4),
@@ -128,11 +127,11 @@ class _SeleccionUsuarioState extends State<SeleccionUsuario> {
                                   style: TextStyle(
                                     color: rolSeleccionado ? Colors.white : Colors.black,
                                     fontFamily: 'Poppins-SemiBold',
-                                    fontSize: 36.0
+                                    fontSize: 36.0.sp
                                   )
                                 ),
                               ),
-                              const SizedBox(height: 80.0),
+                              SizedBox(height: 80.0.h),
                               GestureDetector(
                                 onTap: () {
                                   if (rolSeleccionado == true) {
@@ -145,7 +144,7 @@ class _SeleccionUsuarioState extends State<SeleccionUsuario> {
                                   style: TextStyle(
                                     color: rolSeleccionado ? Colors.black : Colors.white,
                                     fontFamily: 'Poppins-SemiBold',
-                                    fontSize: 36.0
+                                    fontSize: 36.0.sp
                                   )
                                 ),
                               )
@@ -160,11 +159,11 @@ class _SeleccionUsuarioState extends State<SeleccionUsuario> {
             ),
           ),
           Positioned(
-            bottom: 70.0,
+            bottom: 70.0.h,
             child: SizedBox(
               child: Column(
                 children: [
-                  Padding(padding: const EdgeInsets.only(bottom: 55.0),
+                  Padding(padding: EdgeInsets.only(bottom: 55.0.h),
                     child: BotonSiguiente(onPressed: () {
                       if (rolSeleccionado == true) {
                         Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => const RegistroNombreAlumno()));

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BotonAccion extends StatelessWidget {
   
@@ -8,6 +9,7 @@ class BotonAccion extends StatelessWidget {
   final GestureTapCallback onTap;
 
   const BotonAccion({
+    super.key, 
     required this.iconoBoton,
     required this.iconoColor,
     required this.colorBoton,
@@ -18,10 +20,10 @@ class BotonAccion extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(width: 74.0, height: 74.0,
+      child: Container(width: 74.0.w, height: 74.0.w,
         decoration: BoxDecoration(
           color: colorBoton,
-          borderRadius: BorderRadius.circular(100.0), 
+          borderRadius: BorderRadius.circular(100.0.r), 
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.08), 
@@ -30,7 +32,7 @@ class BotonAccion extends StatelessWidget {
             )
           ]
         ),
-        child: Icon(iconoBoton, size: 40.0, color: iconoColor)
+        child: Icon(iconoBoton, size: 40.0.dm, color: iconoColor)
       ),
     );
   }

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BotonIlustracion extends StatefulWidget {
 
   final GestureTapCallback onTap;
+  final String? imagen;
+  final String? letra;
 
   const BotonIlustracion({
-    required this.onTap
+    super.key, 
+    required this.onTap,
+    this.imagen,
+    this.letra
   });
 
   @override
@@ -52,16 +58,16 @@ class _BotonIlustracionState extends State<BotonIlustracion> with SingleTickerPr
       child: Transform.scale(
         scale: botonEscala,
         child: SizedBox(
-          width: 550.0,
-          height: 550.0,
+          width: 550.0.w,
+          height: 550.0.w,
           child: Stack(
             children: [
               Container(
-                width: 550.0,
-                height: 550.0,
+                width: 550.0.w,
+                height: 550.0.w,
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderRadius: BorderRadius.circular(50.0.r),
                     boxShadow: [
                       BoxShadow(
                         color: const Color.fromRGBO(127, 126, 148, 1).withOpacity(0.16),
@@ -71,32 +77,20 @@ class _BotonIlustracionState extends State<BotonIlustracion> with SingleTickerPr
                     ]
                 ),
                 child: Center(
-                  child: Text(
-                    'a',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Poppins-SemiBold',
-                      fontSize: 400.0,
-                      shadows: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.26),
-                          offset: const Offset(0, 4),
-                          blurRadius: 10.0
-                        )
-                      ]
-                    ),
-                  )
+                  child: widget.letra == null ? 
+                  Image(image: AssetImage('${widget.imagen}'), width: 440.0.w, height: 440.0.w) 
+                  : Text('${widget.letra}', style: TextStyle(fontSize: 400.0.sp))
                 )
               ),
               Positioned(
-                top: 18.0,
-                right: 14.0,
+                top: 18.0.h,
+                right: 14.0.w,
                 child: Container(
-                  width: 74.0,
-                  height: 74.0,
+                  width: 74.0.w,
+                  height: 74.0.w,
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(125, 162, 255, 1),
-                    borderRadius: BorderRadius.circular(100.0),
+                    borderRadius: BorderRadius.circular(100.0.r),
                     boxShadow: [
                       BoxShadow(
                         color: const Color.fromRGBO(125, 162, 255, 1).withOpacity(0.32),
@@ -105,7 +99,7 @@ class _BotonIlustracionState extends State<BotonIlustracion> with SingleTickerPr
                       )
                     ]
                   ),
-                  child: const Center(child: Icon(Icons.volume_up_rounded, color: Colors.white, size: 42)),
+                  child: Center(child: Icon(Icons.volume_up_rounded, color: Colors.white, size: 42.w)),
                 )
               ),
             ],

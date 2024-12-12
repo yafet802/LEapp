@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:leapp/components/botones/boton_cerrar.dart';
 import 'package:leapp/letras/letras.dart';
 
@@ -7,6 +8,7 @@ class OverlayActividad extends StatefulWidget {
   final Letra letra;
 
   const OverlayActividad({
+    super.key, 
     required this.letra
   });
 
@@ -19,29 +21,29 @@ class _OverlayActividadState extends State<OverlayActividad> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 540.0,
-      height: 450.0,
+      width: 540.0.w,
+      height: 450.0.h,
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Positioned(bottom: 2.0,
+          Positioned(bottom: 2.0.h,
             child: Container(
-              width: 540.0,
-              height: 140.0,
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(247, 249, 252, 1),
+              width: 540.0.w,
+              height: 140.0.h,
+              decoration: BoxDecoration(
+                color: const Color.fromRGBO(247, 249, 252, 1),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(25.0),
-                  bottomRight: Radius.circular(25.0)
+                  bottomLeft: Radius.circular(25.0.r),
+                  bottomRight: Radius.circular(25.0.r)
                 ),
               ),
               child: Center(  
                 child: GestureDetector(
                 onTap: () {},
-                child: Container(width: 350.0, height: 80.0,
+                child: Container(width: 350.0.w, height: 80.0.h,
                   decoration: BoxDecoration(
                     color: widget.letra.colorHabilitado,
-                    borderRadius: BorderRadius.circular(50.0), 
+                    borderRadius: BorderRadius.circular(50.0.r), 
                     boxShadow: [
                       BoxShadow(
                         color: widget.letra.colorHabilitado.withOpacity(0.4), 
@@ -51,12 +53,12 @@ class _OverlayActividadState extends State<OverlayActividad> {
                       )
                     ]
                   ),
-                  child: const Center(
+                  child: Center(
                       child: Text(
                         'Comenzar', 
                         style: TextStyle(
                           fontFamily: 'Poppins-SemiBold', 
-                          fontSize: 32.0, 
+                          fontSize: 32.0.sp, 
                           color: Colors.white
                         )
                       )
@@ -66,15 +68,15 @@ class _OverlayActividadState extends State<OverlayActividad> {
               ),
             ),
           ),
-          Positioned(top: 71.0,
+          Positioned(top: 71.0.h,
             child: Container(
-              width: 540.0,
-              height: 240.0,
+              width: 540.0.w,
+              height: 240.0.h,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(25.0),
-                  topRight: Radius.circular(25.0)
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25.0.r),
+                  topRight: Radius.circular(25.0.r)
                 ),
                 boxShadow: [
                   BoxShadow(
@@ -87,26 +89,26 @@ class _OverlayActividadState extends State<OverlayActividad> {
             ),
           ),
           Container(
-            width: 142.0,
-            height: 72.0,
-            decoration: const BoxDecoration(
+            width: 142.0.w,
+            height: 72.0.h,
+            decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(100.0),
-                topRight: Radius.circular(100.0)
+                topLeft: Radius.circular(100.0.r),
+                topRight: Radius.circular(100.0.r)
               ),
             ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(padding: const EdgeInsets.only(top: 9.0, bottom: 31.0),
+              Padding(padding: EdgeInsets.only(top: 9.0.h, bottom: 31.0.h),
                 child: Container(
-                  width: 123.0,
-                  height: 123.0,
+                  width: 123.0.w,
+                  height: 123.0.w,
                   decoration: BoxDecoration(
                     color: widget.letra.colorHabilitado,
-                    borderRadius: BorderRadius.circular(100.0),
+                    borderRadius: BorderRadius.circular(100.0.r),
                     boxShadow: [
                       BoxShadow(
                         color: widget.letra.colorHabilitado.withOpacity(0.4),
@@ -116,16 +118,16 @@ class _OverlayActividadState extends State<OverlayActividad> {
                       )
                     ]
                   ),
-                  child: Center(child: Text(widget.letra.letra, style: const TextStyle(color: Colors.white, fontFamily: 'Poppins-Semibold', fontSize: 48.0))),
+                  child: Center(child: Text(widget.letra.letra, style: TextStyle(color: Colors.white, fontFamily: 'Poppins-Semibold', fontSize: 48.0.sp))),
                 )
               ),
-              const Text('Nombre Actividad', style: TextStyle(color: Colors.black, fontFamily: 'Poppins-SemiBold', fontSize: 32.0)),
-              const Padding(padding: EdgeInsets.only(top: 22.0, bottom: 35.0),
-                child: Text('Descripcion de la Actividad', textAlign: TextAlign.center, style: TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 24.0)),
+              Text('Nombre Actividad', style: TextStyle(color: Colors.black, fontFamily: 'Poppins-SemiBold', fontSize: 32.0.sp)),
+              Padding(padding: EdgeInsets.only(top: 22.0.h, bottom: 35.0.h),
+                child: Text('Descripcion de la Actividad', textAlign: TextAlign.center, style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 24.0.sp)),
               ),
             ],
           ),
-          Positioned(top: 83.0, right:  10.0, child: BotonCerrar(onTap: () {Navigator.pop(context);}))
+          Positioned(top: 83.0.h, right:  10.0.w, child: BotonCerrar(onTap: () {Navigator.pop(context);}))
         ],
       ),
     );
@@ -139,31 +141,31 @@ class OverlayActividadBloqueada extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 540.0,
-      height: 352.0,
+      width: 540.0.w,
+      height: 352.0.h,
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Positioned(bottom: 2.0,
+          Positioned(bottom: 2.0.h,
             child: Container(
-              width: 540.0,
-              height: 140.0,
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(247, 249, 252, 1),
+              width: 540.0.w,
+              height: 140.0.h,
+              decoration: BoxDecoration(
+                color: const Color.fromRGBO(247, 249, 252, 1),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(25.0),
-                  bottomRight: Radius.circular(25.0)
+                  bottomLeft: Radius.circular(25.0.r),
+                  bottomRight: Radius.circular(25.0.r)
                 ),
               ),
               child: Center(  
                 child: GestureDetector(
                 onTap: () {},
                 child: Container(
-                  width: 350.0, 
-                  height: 80.0,
+                  width: 350.0.w, 
+                  height: 80.0.h,
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(128, 132, 148, 1),
-                    borderRadius: BorderRadius.circular(50.0), 
+                    borderRadius: BorderRadius.circular(50.0.r), 
                     boxShadow: [
                       BoxShadow(
                         color: const Color.fromRGBO(128, 132, 148, 1).withOpacity(0.4), 
@@ -173,12 +175,12 @@ class OverlayActividadBloqueada extends StatelessWidget {
                       )
                     ]
                   ),
-                  child: const Center(
+                  child: Center(
                       child: Text(
                         'Comenzar', 
                         style: TextStyle(
                           fontFamily: 'Poppins-SemiBold', 
-                          fontSize: 32.0, 
+                          fontSize: 32.0.sp, 
                           color: Colors.white
                         )
                       )
@@ -189,13 +191,13 @@ class OverlayActividadBloqueada extends StatelessWidget {
             ),
           ),
           Container(
-              width: 540.0,
-              height: 212.0,
+              width: 540.0.w,
+              height: 212.0.h,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(25.0),
-                  topRight: Radius.circular(25.0)
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25.0.r),
+                  topRight: Radius.circular(25.0.r)
                 ),
                 boxShadow: [
                   BoxShadow(
@@ -206,18 +208,18 @@ class OverlayActividadBloqueada extends StatelessWidget {
                 ]
               ),
             ),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(padding: EdgeInsets.only(top: 42.0),
-                child: Text('Titulo Actividad', style: TextStyle(color: Colors.black, fontFamily: 'Poppins-SemiBold', fontSize: 32.0)),
+              Padding(padding: EdgeInsets.only(top: 42.0.h),
+                child: Text('Titulo Actividad', style: TextStyle(color: Colors.black, fontFamily: 'Poppins-SemiBold', fontSize: 32.0.sp)),
               ),
-              Padding(padding: EdgeInsets.only(top: 22.0),
-                child: Text('Completa los niveles anteriores\npara habilitar este nivel', textAlign: TextAlign.center, style: TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 24.0)),
+              Padding(padding: EdgeInsets.only(top: 22.0.h),
+                child: Text('Completa los niveles anteriores\npara habilitar este nivel', textAlign: TextAlign.center, style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-Medium', fontSize: 24.0.sp)),
               ),
             ],
           ),
-          Positioned(top: 10.0, right:  10.0, child: BotonCerrar(onTap: () {Navigator.pop(context);}))
+          Positioned(top: 10.0.h, right:  10.0.w, child: BotonCerrar(onTap: () {Navigator.pop(context);}))
         ],
       ),
     );

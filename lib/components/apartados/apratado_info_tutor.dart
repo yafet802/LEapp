@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ApartadoInfoTutor extends StatefulWidget {
   const ApartadoInfoTutor({super.key});
@@ -36,30 +37,30 @@ class _ApartadoInfoTutorState extends State<ApartadoInfoTutor> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 402.0,
-      height: 124.0,
+      width: 402.0.w,
+      height: 124.0.h,
       decoration: BoxDecoration(
         color: const Color.fromRGBO(218, 224, 240, 1),
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(20.0.r),
       ),
       child: Row(
         children: [
-          Padding(padding: const EdgeInsets.only(left: 20.0, right: 22.0),
+          Padding(padding: EdgeInsets.only(left: 20.0.w, right: 22.0.w),
             child: SizedBox(
-              width: 130.0,
-              height: 94.0,
+              width: 130.0.w,
+              height: 94.0.h,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Padding(padding: EdgeInsets.only(bottom: 8.0),
-                  child: Text('Alumnos', style: TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 23.0))),
+                  Padding(padding: EdgeInsets.only(bottom: 8.0.h),
+                    child: Text('Alumnos', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 23.0.sp))),
                   Container(
-                    width: 130.0,
-                    height: 50.0,
+                    width: 130.0.w,
+                    height: 50.0.h,
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(236, 241, 255, 1),
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(50.0.r),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.08),
@@ -69,28 +70,28 @@ class _ApartadoInfoTutorState extends State<ApartadoInfoTutor> {
                         )
                       ]
                     ),
-                    child: Center(child: Text('$totalAlumnos', style: const TextStyle(color: Color.fromRGBO(125, 162, 255, 1), fontFamily: 'Poppins-SemiBold', fontSize: 24.0))),
+                    child: Center(child: Text('$totalAlumnos', style: TextStyle(color: const Color.fromRGBO(125, 162, 255, 1), fontFamily: 'Poppins-SemiBold', fontSize: 24.0.sp))),
                   )
                 ],
               ),
             )
           ),
-          Padding(padding: const EdgeInsets.only(right: 20.0),
+          Padding(padding: EdgeInsets.only(right: 20.0.w),
             child: SizedBox(
-              width: 210.0,
-              height: 94.0,
+              width: 210.0.w,
+              height: 94.0.h,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Padding(padding: EdgeInsets.only(bottom: 8.0),
-                  child: Text('Código', style: TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 23.0))),
+                  Padding(padding: EdgeInsets.only(bottom: 8.0.h),
+                    child: Text('Código', style: TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 23.0.sp))),
                   Container(
-                    width: 210.0,
-                    height: 50.0,
+                    width: 210.0.w,
+                    height: 50.0.h,
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(236, 241, 255, 1),
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(50.0.r),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.08),
@@ -100,7 +101,7 @@ class _ApartadoInfoTutorState extends State<ApartadoInfoTutor> {
                         )
                       ]
                     ),
-                    child: const Center(child: Text('000000', style: TextStyle(color: Color.fromRGBO(125, 162, 255, 1), fontFamily: 'Poppins-SemiBold', fontSize: 24.0))),
+                    child: Center(child: Text('000000', style: TextStyle(color: const Color.fromRGBO(125, 162, 255, 1), fontFamily: 'Poppins-SemiBold', fontSize: 24.0.sp))),
                   )
                 ],
               ),

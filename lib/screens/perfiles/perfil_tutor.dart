@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:leapp/components/apartados/apratado_alumno.dart';
 import 'package:leapp/components/apartados/apratado_info_tutor.dart';
 import 'package:leapp/components/barras/barra_buscar.dart';
@@ -24,7 +25,7 @@ class _PerfilTutorState extends State<PerfilTutor> {
         children: [
           Container(
             width: double.infinity,
-            height: 491.0,
+            height: 491.0.h,
             decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [
@@ -37,29 +38,29 @@ class _PerfilTutorState extends State<PerfilTutor> {
             ),
           ),
           Positioned(
-            top: 19.0,
-            right: 27.0,
+            top: 19.0.h,
+            right: 27.0.w,
             child: BotonCerrar(onTap: () {})
           ),
-          Padding(padding: const EdgeInsets.only(top: 66.0),
+          Padding(padding: EdgeInsets.only(top: 66.0.h),
             child: SizedBox(
-              width: 463.0,
-              height: 140.0,
+              width: 463.0.w,
+              height: 140.0.h,
               child: Wrap(
-                spacing: 23.0,
+                spacing: 23.0.w,
                 direction: Axis.horizontal,
                 clipBehavior: Clip.none,
                 children: [
-                  const Image(image: AssetImage('assets/img/FotoPerfilAlumno.png'), width: 140.0, height: 140.0),
+                  Image(image: const AssetImage('assets/img/FotoPerfilAlumno.png'), width: 140.0.w, height: 140.0.h),
                   SizedBox(
-                    width: 300.0,
-                    height: 140.0,
+                    width: 300.0.w,
+                    height: 140.0.h,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Text('Nombre Tutor', style: TextStyle(color: Colors.black, fontFamily: 'Poppins-SemiBold', fontSize: 32.0)),
-                        Padding(padding: const EdgeInsets.only(top: 14.0),
+                        Text('Nombre Tutor', style: TextStyle(color: Colors.black, fontFamily: 'Poppins-SemiBold', fontSize: 32.0.sp)),
+                        Padding(padding: EdgeInsets.only(top: 14.0.h),
                           child: BotonPerfil(nombreBoton: 'Configuracion', onTap: () {}),
                         )
                       ],
@@ -69,20 +70,19 @@ class _PerfilTutorState extends State<PerfilTutor> {
               ),
             ),
           ),
-          const Padding(padding: EdgeInsets.only(top: 233.0),
-            child: ApartadoInfoTutor(),
+          Padding(padding: EdgeInsets.only(top: 233.0.h),
+            child: const ApartadoInfoTutor(),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 385.0, left: 38.0, right: 156.0),
-            child: BarraBusqueda(),
+          Padding(padding: EdgeInsets.only(top: 385.0.h, left: 38.0.w, right: 156.0.w),
+            child: const BarraBusqueda(),
           ),
-          Positioned(top: 385.0, right: 38.0, child: BotonFiltrar(onTap: (){})),
-          Padding(padding: EdgeInsets.only(top: 491.0),
+          Positioned(top: 385.0.h, right: 38.0.w, child: BotonFiltrar(onTap: (){})),
+          Padding(padding: EdgeInsets.only(top: 491.0.h),
             child: Expanded(
               child: ListView(
                 children: [
                   for (int i = 0; i < 30; i++)
-                    ApartadoAlumno()
+                    const ApartadoAlumno()
                 ],
               )
             ),

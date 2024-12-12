@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
 
 class BotonOpcionInicio extends StatelessWidget {
   
@@ -6,7 +7,8 @@ class BotonOpcionInicio extends StatelessWidget {
   final Color colorSombra;
   final Image logoBoton;
 
-  BotonOpcionInicio({
+  const BotonOpcionInicio({
+    super.key, 
     required this.colorBoton,
     required this.colorSombra,
     required this.logoBoton
@@ -16,10 +18,10 @@ class BotonOpcionInicio extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {},
-      child: Container(width: 76.0, height: 76.0,
+      child: Container(width: 76.0.w, height: 76.0.w,
         decoration: BoxDecoration(
           color: colorBoton,
-          borderRadius: BorderRadius.circular(15.0), 
+          borderRadius: BorderRadius.circular(15.0.r), 
           boxShadow: [
             BoxShadow(
               color: colorSombra.withOpacity(0.25), 
@@ -28,7 +30,7 @@ class BotonOpcionInicio extends StatelessWidget {
             )
           ]
         ),
-        child:  Center(child: Image(image: logoBoton.image, width: 41.0, height: 41.0))
+        child:  Center(child: Image(image: logoBoton.image, width: 41.0.w, height: 41.0.w))
       ),
     );
   }

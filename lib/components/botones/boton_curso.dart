@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:leapp/letras/letras.dart';
 import 'package:leapp/overlays/overlay_actividad.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BotonCurso extends StatefulWidget {
 
   final Letra letra;
 
-  const BotonCurso({
-    required this.letra
-  });
+  const BotonCurso({super.key, required this.letra});
 
   @override
   State<BotonCurso> createState() => _BotonCursoState();
@@ -44,49 +43,22 @@ class _BotonCursoState extends State<BotonCurso> {
           );
         }
       },
-      child: SizedBox(
-        width: 140.0,
-        height: 150.0,
-        child: Stack(
-          alignment: Alignment.topCenter,
-          children: [
-            Positioned(
-              bottom: 0.0,
-              child: Container(
-                width: 140.0,
-                height: 80.0,
-                decoration: BoxDecoration(
-                  color:  widget.letra.desbloqueado == false ? const Color.fromRGBO(99, 104, 118, 1) : widget.letra.colorHabilitadoSecundario,
-                  borderRadius: const BorderRadius.only(
-                    bottomRight: Radius.circular(100.0),
-                    bottomLeft: Radius.circular(100.0)
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: widget.letra.desbloqueado == false ? const Color.fromRGBO(99, 104, 118, 1).withOpacity(0.4) : widget.letra.colorHabilitadoSecundario.withOpacity(0.4),
-                      offset: const Offset(0, 10),
-                      blurRadius: 20.0,
-                      spreadRadius: 3.0
-                    )
-                  ]
-                ),
-              ),
-            ),
-            Positioned(
-              top: 0.0,
-              child: Container(
-                width: 140.0,
-                height: 140.0,
-                decoration: BoxDecoration(
-                  color: widget.letra.desbloqueado == false ? const Color.fromRGBO(126, 132, 148, 1) : widget.letra.colorHabilitado,
-                  borderRadius: BorderRadius.circular(100.0)
-                ),
-                child: Center(child: Text(widget.letra.letra, style: TextStyle(color: widget.letra.desbloqueado == false ? const Color.fromRGBO(229, 242, 250, 1) : Colors.white, fontFamily: 'Poppins-SemiBold', fontSize: 60.0))),
-              ),
-            ),
-          ],
+      child: Container(
+        width: 140.0.w,
+        height: 140.0.w,
+        decoration: BoxDecoration(
+          color:  widget.letra.desbloqueado == false ? const Color.fromRGBO(99, 104, 118, 1) : widget.letra.colorHabilitado,
+          borderRadius: BorderRadius.circular(100.0.r),
+          boxShadow: [
+            BoxShadow(
+              color: widget.letra.desbloqueado == false ? const Color.fromRGBO(99, 104, 118, 1).withOpacity(0.25) : widget.letra.colorHabilitado.withOpacity(0.4),
+              offset: const Offset(0, 4),
+              blurRadius: 8.0,
+            )
+          ]
         ),
-      ),
+        child: Center(child: Text(widget.letra.letra, style: TextStyle(color: widget.letra.desbloqueado == false ? const Color.fromRGBO(229, 242, 250, 1) : Colors.white, fontFamily: 'Poppins-SemiBold', fontSize: 60.0.sp))),
+      )
     );
   }
 }

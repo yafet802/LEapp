@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
 
 class BotonInicioRegistroSecundario extends StatelessWidget {
 
@@ -7,6 +8,7 @@ class BotonInicioRegistroSecundario extends StatelessWidget {
   final String accionSecundaria;
 
   const BotonInicioRegistroSecundario({
+    super.key, 
     required this.onPressed,
     required this.descripcion,
     required this.accionSecundaria
@@ -18,20 +20,20 @@ class BotonInicioRegistroSecundario extends StatelessWidget {
       children: [
         Text(
           descripcion,
-          style: const TextStyle(
-            color: Color.fromRGBO(126, 132, 148, 1),
+          style: TextStyle(
+            color: const Color.fromRGBO(126, 132, 148, 1),
             fontFamily: 'Poppins-Medium',
-            fontSize: 24.0
+            fontSize: 24.0.sp
           )
         ),
         GestureDetector(
           onTap: () {},
           child: Text(
             accionSecundaria,
-            style: const TextStyle(
-              color: Color.fromRGBO(125, 162, 255, 1),
+            style: TextStyle(
+              color: const Color.fromRGBO(125, 162, 255, 1),
               fontFamily: 'Poppins-SemiBold',
-              fontSize: 32.0
+              fontSize: 32.0.sp
             )
           ),
         )

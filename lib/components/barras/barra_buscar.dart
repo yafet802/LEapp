@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BarraBusqueda extends StatelessWidget {
   const BarraBusqueda({super.key});
@@ -7,23 +8,23 @@ class BarraBusqueda extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite, 
-      height: 80.0,
+      height: 80.0.h,
       clipBehavior: Clip.none,
       decoration: BoxDecoration(
         color: Colors.transparent,
-        borderRadius: BorderRadius.circular(50.0),
+        borderRadius: BorderRadius.circular(50.0.r),
       ),
-      child: const SearchBar(
-        elevation: WidgetStatePropertyAll<double>(0.0),
-        surfaceTintColor: WidgetStatePropertyAll<Color>(Color.fromRGBO(218, 224, 240, 1)),
-        backgroundColor: WidgetStatePropertyAll<Color>(Color.fromRGBO(218, 224, 240, 1)),
-        overlayColor: WidgetStatePropertyAll<Color>(Color.fromRGBO(218, 224, 240, 1)),
-        padding: WidgetStatePropertyAll<EdgeInsets>(EdgeInsets.symmetric(horizontal: 35.0)),
+      child: SearchBar(
+        elevation: const WidgetStatePropertyAll<double>(0.0),
+        surfaceTintColor: const WidgetStatePropertyAll<Color>(Color.fromRGBO(218, 224, 240, 1)),
+        backgroundColor: const WidgetStatePropertyAll<Color>(Color.fromRGBO(218, 224, 240, 1)),
+        overlayColor: const WidgetStatePropertyAll<Color>(Color.fromRGBO(218, 224, 240, 1)),
+        padding: WidgetStatePropertyAll<EdgeInsets>(EdgeInsets.symmetric(horizontal: 35.0.w)),
         leading: Padding(
-          padding: EdgeInsets.only(left: 35.0),
-            child: Image(image: AssetImage('assets/img/buscarIcono.png'), width: 32.0, height: 32.0),
+          padding: EdgeInsets.only(left: 35.0.w),
+            child: Image(image: const AssetImage('assets/img/buscarIcono.png'), width: 32.0.w, height: 32.0.w),
           ),
-        hintStyle: WidgetStatePropertyAll<TextStyle>(TextStyle(color: Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 28.0)),
+        hintStyle: WidgetStatePropertyAll<TextStyle>(TextStyle(color: const Color.fromRGBO(126, 132, 148, 1), fontFamily: 'Poppins-SemiBold', fontSize: 28.0.sp)),
         hintText: 'Buscar Alumno',
       ),
     );

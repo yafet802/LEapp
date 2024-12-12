@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:leapp/components/apartados/apartado_info_alumno.dart';
 import 'package:leapp/components/barras/tabbar.dart';
 import 'package:leapp/components/botones/boton_cerrar.dart';
@@ -21,7 +22,7 @@ class _PerfilAlumnoState extends State<PerfilAlumno> {
         children: [
           Container(
             width: double.infinity,
-            height: 491.0,
+            height: 478.0.h,
             decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [
@@ -34,44 +35,46 @@ class _PerfilAlumnoState extends State<PerfilAlumno> {
             ),
           ),
           Positioned(
-            top: 19.0,
-            right: 27.0,
-            child: BotonCerrar(onTap: () {})
+            top: 18.0.h,
+            right: 27.0.w,
+            child: SafeArea(child: BotonCerrar(onTap: () {}))
           ),
-          Padding(padding: const EdgeInsets.only(top: 66.0),
-            child: SizedBox(
-              width: 463.0,
-              height: 140.0,
-              child: Wrap(
-                spacing: 23.0,
-                direction: Axis.horizontal,
-                clipBehavior: Clip.none,
-                children: [
-                  const Image(image: AssetImage('assets/img/FotoPerfilAlumno.png'), width: 140.0, height: 140.0),
-                  SizedBox(
-                    width: 300.0,
-                    height: 140.0,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text('Nombre', style: TextStyle(color: Colors.black, fontFamily: 'Poppins-SemiBold', fontSize: 32.0)),
-                        Padding(padding: const EdgeInsets.only(top: 14.0),
-                          child: BotonPerfil(nombreBoton: 'Eliminar Alumno', onTap: () {}),
-                        )
-                      ],
-                    ),
-                  )
-                ],
+          Padding(padding: EdgeInsets.only(top: 36.0.h),
+            child: SafeArea(
+              child: SizedBox(
+                width: 463.0.w,
+                height: 140.0.h,
+                child: Wrap(
+                  spacing: 23.0.w,
+                    direction: Axis.horizontal,
+                    clipBehavior: Clip.none,
+                    children: [
+                      Image(image: const AssetImage('assets/img/FotoPerfilAlumno.png'), width: 140.0.w, height: 140.0.h),
+                      SizedBox(
+                        width: 300.0.w,
+                        height: 140.0.h,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text('Nombre', style: TextStyle(color: Colors.black, fontFamily: 'Poppins-SemiBold', fontSize: 32.0.sp)),
+                            Padding(padding: EdgeInsets.only(top: 14.0.h),
+                              child: BotonPerfil(nombreBoton: 'Eliminar Alumno', onTap: () {}),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ),
+          Padding(padding: EdgeInsets.only(top: 203.0.h),
+            child: const SafeArea(child: ApartadoInfoAlumno()),
           ),
-          const Padding(padding: EdgeInsets.only(top: 233.0),
-            child: ApartadoInfoAlumno(),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(top: 384.0),
-            child: TabBart(),
+          Padding(
+            padding: EdgeInsets.only(top: 354.0.h),
+            child: const TabBart(),
           )
         ],
       )
